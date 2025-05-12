@@ -2,7 +2,7 @@ from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(card: str) -> str:
-    '''Возвращает название карты(счета) и маскиолваный номер карты(счета)'''
+    """Возвращает название карты(счета) и маскиолваный номер карты(счета)"""
 
     if len(card) != 0:
 
@@ -30,7 +30,7 @@ def get_date(data: str) -> str:
     """Принимает стоку с датой и временем, проверяет на присутствие
     данных и их корректность, и возвращает дату в формате ДД.ММ.ГГ"""
 
-    if len(data) == 26 and 'T' in data:
+    if len(data) == 26 and "T" in data:
         year = data[:4]
         month = data[5:7]
         day = data[8:10]
@@ -38,4 +38,4 @@ def get_date(data: str) -> str:
     else:
         return "Некорректный формат даты"
 
-    return f'{day}.{month}.{year}'
+    return f"{day}.{month}.{year}"

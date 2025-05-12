@@ -16,7 +16,7 @@ check_data = "2024-03-11T02:26:18.671407"
 card = "Visa Platinum 8990922113665229"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     print(get_mask_card_number(card_num))
     print(get_mask_account(acc_num))

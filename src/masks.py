@@ -1,4 +1,3 @@
-
 def get_mask_card_number(str_card_number: str) -> str:
     """Функция принимает номер карты в формате str и возвращает
     в формате str виде XXXX XX** **** XXXX"""
