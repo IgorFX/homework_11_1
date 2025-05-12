@@ -13,7 +13,7 @@ from src.masks import get_mask_account, get_mask_card_number
         ("", "Отсутствует номер карты"),
     ],
 )
-def test_get_mask_card_number(value, expected):
+def test_get_mask_card_number(value: str, expected: str) -> None:
     assert get_mask_card_number(value) == expected
 
 
@@ -26,5 +26,5 @@ def test_get_mask_card_number(value, expected):
         ("", "Отсутствует номер счета"),
     ],
 )
-def test_get_mask_account(value, expected):
+def test_get_mask_account(value: str, expected: str) -> None:
     assert get_mask_account(value) == expected

@@ -1,4 +1,6 @@
-def filter_by_currency(data: list[dict], currency: str):
+from collections.abc import Iterator
+
+def filter_by_currency(data: list[dict], currency: str) -> Iterator[dict]:
     """Функция принимает на вход список словарей и возвращает итератор"""
 
     for item in data:
@@ -7,21 +9,19 @@ def filter_by_currency(data: list[dict], currency: str):
             yield item
 
 
-def transaction_descriptions(data: list[dict]):
+def transaction_descriptions(data: list[dict]) -> Iterator[str]:
     """Функция принимает на вход список словарей и возвращает итератор"""
 
     for item in data:
 
-        if not item.get("description", 0):
-            return "Транзакция не имеет описания"
-        else:
+        if item.get("description", 0):
             yield item["description"]
-            return None
-    return None
+
+    return "Транзакция не имеет описания"
 
 
-def card_number_generator(start: int, end: int):
-    """ Функция генерирует номера карт в диапазоне от start до end"""
+def card_number_generator(start: int, end: int) -> Iterator[str]:
+    """Функция генерирует номера карт в диапазоне от start до end"""
 
     for num in range(start, end):
 
